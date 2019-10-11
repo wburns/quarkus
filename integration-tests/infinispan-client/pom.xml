@@ -56,6 +56,10 @@
                     <groupId>commons-logging</groupId>
                     <artifactId>commons-logging</artifactId>
                 </exclusion>
+                <exclusion>
+                    <groupId>org.hibernate</groupId>
+                    <artifactId>hibernate-search-serialization-avro</artifactId>
+                </exclusion>
             </exclusions>
             <scope>test</scope>
         </dependency>
