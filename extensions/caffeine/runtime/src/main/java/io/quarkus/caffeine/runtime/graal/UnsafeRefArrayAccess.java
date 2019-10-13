@@ -14,4 +14,7 @@ public final class UnsafeRefArrayAccess {
     @RecomputeFieldValue(kind = RecomputeFieldValue.Kind.ArrayIndexShift, declClass = Object[].class)
     public static int REF_ELEMENT_SHIFT;
 
+    @Alias
+    @RecomputeFieldValue(kind = RecomputeFieldValue.Kind.ArrayBaseOffset, declClass = Object[].class)
+    public static int REF_ARRAY_BASE;
 }

@@ -33,6 +33,7 @@ import org.infinispan.protostream.BaseMarshaller;
 import org.infinispan.protostream.FileDescriptorSource;
 import org.infinispan.protostream.SerializationContext;
 import org.infinispan.protostream.SerializationContextInitializer;
+import org.infinispan.protostream.WrappedMessage;
 import org.infinispan.query.remote.client.ProtobufMetadataManagerConstants;
 
 /**
@@ -127,10 +128,10 @@ public class InfinispanClientProducer {
         // Note that the other half is done in QuerySubstitutions.SubstituteMarshallerRegistration class
         // Note that the registration of these files are done twice in normal VM mode
         // (once during init and once at runtime)
-        //        properties.put(InfinispanClientProducer.PROTOBUF_FILE_PREFIX + MarshallerRegistration.QUERY_PROTO_RES,
-        //                getContents(MarshallerRegistration.QUERY_PROTO_RES));
-        //        properties.put(InfinispanClientProducer.PROTOBUF_FILE_PREFIX + MarshallerRegistration.MESSAGE_PROTO_RES,
-        //                getContents(MarshallerRegistration.MESSAGE_PROTO_RES));
+        properties.put(InfinispanClientProducer.PROTOBUF_FILE_PREFIX + WrappedMessage.PROTO_FILE,
+                getContents("/" + WrappedMessage.PROTO_FILE));
+        String queryProtoFile = "org/infinispan/query/remote/client/query.proto";
+        properties.put(InfinispanClientProducer.PROTOBUF_FILE_PREFIX + queryProtoFile, getContents("/" + queryProtoFile));
     }
 
     /**
