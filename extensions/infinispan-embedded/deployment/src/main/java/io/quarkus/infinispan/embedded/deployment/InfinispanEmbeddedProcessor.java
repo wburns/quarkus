@@ -86,6 +86,7 @@ class InfinispanEmbeddedProcessor {
                 "org/infinispan/protostream/message-wrapping.proto",
                 "proto/generated/persistence.commons.proto",
                 "proto/generated/persistence.core.proto",
+                "proto/generated/global.commons.proto",
                 "default-configs/default-jgroups-udp.xml",
                 "default-configs/default-jgroups-tcp.xml",
                 "default-configs/default-jgroups-kubernetes.xml",
